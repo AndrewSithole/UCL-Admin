@@ -12,7 +12,7 @@ const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'li
 const storeAnalyticsChartOptions = {
   series: [
     {
-      name: 'Visitors',
+      name: 'Production',
       data: [0, 15000, 7000, 22000, 15000, 30000, 28000, 40000, 30000, 25000, 44000, 48000],
     },
     {
@@ -23,7 +23,7 @@ const storeAnalyticsChartOptions = {
   colors: [themeColors.primary['500'], colors.sky['500']],
   chart: {
     type: 'line',
-    height: 350,
+    height: 280,
     zoom: {
       enabled: false,
     },
@@ -40,7 +40,7 @@ const storeAnalyticsChartOptions = {
     width: 2,
   },
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    categories: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
     axisBorder: {
       color: theme === 'dark' ? colors.slate['600'] : colors.slate['200'],
     },
@@ -70,6 +70,76 @@ storeAnalyticsChart.render();
 // Custom Legends
 const salesAnalyticsChartLegends = document.querySelectorAll("#store-analytics-chart-legend input[type='checkbox']");
 salesAnalyticsChartLegends.forEach((legend) => {
+  legend.addEventListener('click', (event) => {
+    storeAnalyticsChart.toggleSeries(event.target.value);
+    legend.parentNode.classList.toggle('opacity-20');
+  });
+});
+
+// ========Store Analytics Chart End ===========
+
+// ========Store Analytics 1 Chart Start ===========
+const storeAnalyticsChartOptions1 = {
+  series: [
+    {
+      name: 'Sales',
+      data: [0, 11000, 7000, 8000, 11000, 15000, 22000, 20000, 22000, 23000, 28000, 26000],
+    },
+    {
+      name: 'Targets',
+      data: [0, 5000, 1000, 1200, 10000, 15000, 20000, 20000, 20000, 25000, 25000, 25000],
+    },
+  ],
+  colors: [themeColors.danger['500'], colors.lime['500']],
+  chart: {
+    type: 'line',
+    height: 280,
+    zoom: {
+      enabled: false,
+    },
+    toolbar: {
+      show: false,
+    },
+    fontFamily: themeConfig.theme.fontFamily.sans,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    curve: 'smooth',
+    width: 2,
+  },
+  xaxis: {
+    categories: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+    axisBorder: {
+      color: theme === 'dark' ? colors.slate['600'] : colors.slate['200'],
+    },
+    axisTicks: {
+      color: theme === 'dark' ? colors.slate['600'] : colors.slate['200'],
+    },
+  },
+  yaxis: {
+    min: 0,
+    max: 50000,
+    tickAmount: 5,
+    labels: {
+      formatter: function (value) {
+        return value / 1000 + 'K';
+      },
+    },
+  },
+  legend: {
+    show: false,
+  },
+  grid: {
+    borderColor: theme === 'dark' ? colors.slate['600'] : colors.slate['200'],
+  },
+};
+let storeAnalyticsChart1 = new ApexCharts(document.querySelector('#store-analytics-chart1'), storeAnalyticsChartOptions1);
+storeAnalyticsChart1.render();
+// Custom Legends
+const salesAnalyticsChartLegends1 = document.querySelectorAll("#store-analytics-chart-legend1 input[type='checkbox']");
+salesAnalyticsChartLegends1.forEach((legend) => {
   legend.addEventListener('click', (event) => {
     storeAnalyticsChart.toggleSeries(event.target.value);
     legend.parentNode.classList.toggle('opacity-20');
@@ -189,6 +259,8 @@ root.setThemes([am5themes_Animated.new(root)]);
 let salesLocationChart = root.container.children.push(
   am5map.MapChart.new(root, {
     projection: am5map.geoMercator(),
+    homeGeoPoint: { longitude: 25, latitude: -15},
+    minZoomLevel: 8,
     draggable: false,
     panY: false,
     panX: false,
@@ -221,7 +293,9 @@ polygonSeries.mapPolygons.template.setAll({
   interactive: true,
   templateField: 'polygonSettings',
 });
-
+polygonSeries.events.on("datavalidated", function() {
+  salesLocationChart.goHome();
+});
 // Set Tooltip Background Color
 let tooltip = am5.Tooltip.new(root, {});
 tooltip.get('background').setAll({
@@ -231,26 +305,26 @@ tooltip.get('background').setAll({
 // Set Individual country Color
 polygonSeries.data.setAll([
   {
-    id: 'US',
+    id: 'ZM',
     polygonSettings: {
-      fill: am5.color(themeColors.primary['500']),
+      fill: am5.color(themeColors.info['500']),
     },
   },
   {
-    id: 'AU',
+    id: 'ZW',
     polygonSettings: {
       fill: am5.color(themeColors.success['500']),
     },
   },
   {},
   {
-    id: 'BR',
+    id: 'BW',
     polygonSettings: {
-      fill: am5.color(themeColors.info['500']),
+      fill: am5.color(themeColors.danger['500']),
     },
   },
   {
-    id: 'DE',
+    id: 'MW',
     polygonSettings: {
       fill: am5.color(themeColors.warning['500']),
     },
