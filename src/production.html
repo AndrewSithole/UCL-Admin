@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./images/logo-small.svg" type="image/svg+xml" />
+  <title>UCF Financial dashboards</title>
+  <meta name="description"
+        content="Admin Toolkit is a modern admin dashboard template based on Tailwindcss. It comes with a variety of useful ui components and pre-built pages" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet" />
+  <link rel="stylesheet" href="./scss/app.scss" />
+  <script>
+    if (
+            localStorage.getItem('theme') === 'dark' ||
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+
+<body>
+<div id="app">
+  <!-- Sidebar Starts -->
+  <aside class="sidebar collapsed">
+    <!-- Sidebar Header Starts -->
+    <a href="/">
+      <div class="sidebar-header">
+        <div class="sidebar-logo-icon">
+          <img src="./images/logo-small.svg" alt="logo" class="h-[45px]" />
+        </div>
+
+        <div class="sidebar-logo-text">
+          <h1 class="flex text-xl">
+            <span class="font-bold text-slate-800 dark:text-slate-200"> UCF </span>
+            <span class="font-semibold text-primary-500">Dashboards</span>
+          </h1>
+
+          <p class="whitespace-nowrap text-xs text-slate-400">Production monitoring</p>
+        </div>
+      </div>
+    </a>
+    <!-- Sidebar Header Ends -->
+
+    <!-- Sidebar Menu Starts -->
+    <ul class="sidebar-content">
+      <!-- Dashboard -->
+      <li>
+        <a href="/" class="sidebar-menu">
+            <span class="sidebar-menu-icon">
+              <i data-feather="home"></i>
+            </span>
+          <span class="sidebar-menu-text">Dashboard</span>
+        </a>
+      </li>
+
+      <!-- Production -->
+      <li>
+        <a href="./production.html" class="sidebar-menu active">
+            <span class="sidebar-menu-icon">
+              <i data-feather="box"></i>
+            </span>
+          <span class="sidebar-menu-text">Inventory</span>
+        </a>
+      </li>
+
+    </ul>
+    <!-- Sidebar Menu Ends -->
+  </aside>
+  <!-- Sidebar Ends -->
+
+  <!-- Wrapper Starts -->
+  <div class="wrapper">
+
+
+    <!-- Page Content Starts -->
+    <div class="content">
+      <!-- Main Content Starts -->
+      <main class="container flex-grow p-4 sm:p-6">
+        <!-- Page Title Starts -->
+        <div class="mb-6 flex flex-col justify-between gap-y-1 sm:flex-row sm:gap-y-0">
+          <div>
+            <button class="sidebar-toggle">
+              <span class="flex space-x-4">
+                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" height="22" width="22"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16">
+                  </path>
+                </svg>
+              </span>
+            </button>
+            <h5>UCF Financial dashboards</h5>
+          </div>
+          <select class="select select-sm w-full md:w-32">
+            <option value="1">Volume</option>
+            <option value="2">Monetary</option>
+          </select>
+        </div>
+        <!-- Page Title Ends -->
+
+        <div class="space-y-6">
+          <!-- Overview Section Start -->
+          <section class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            <!-- Product Views  -->
+            <div class="card">
+              <div class="card-body flex items-center gap-4">
+                <div
+                        class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary-500 bg-opacity-20 text-primary-500">
+                  <i data-feather="box" class="text-3xl"></i>
+                </div>
+                <div class="flex flex-1 flex-col gap-1">
+                  <p class="text-sm tracking-wide text-slate-500">Raw Materials</p>
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <h4>115,000<i>t</i></h4>
+                    <span class="flex items-center text-xs font-medium text-success-500"><i class="h-3 w-3"
+                                                                                            stroke-width="3px" data-feather="arrow-up-right"></i>2.2%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Product Sold  -->
+            <div class="card">
+              <div class="card-body flex items-center gap-4">
+                <div
+                        class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-success-500 bg-opacity-20 text-success-500">
+                  <i class="bx bx-dollar-circle text-3xl"></i>
+                </div>
+                <div class="flex flex-1 flex-col gap-1">
+                  <p class="text-sm tracking-wide text-slate-500">Product Sold</p>
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <h4>8,430<i>t</i></h4>
+                    <span class="flex items-center text-xs font-medium text-danger-500">
+                        <i class="h-3 w-3" stroke-width="3px" data-feather="arrow-down-left"></i> 0.5%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Likes  -->
+            <div class="card">
+              <div class="card-body flex items-center gap-4">
+                <div
+                        class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-warning-500 bg-opacity-20 text-warning-500">
+                  <i class="ti ti-thumb-up text-3xl"></i>
+                </div>
+                <div class="flex flex-1 flex-col gap-1">
+                  <p class="text-sm tracking-wide text-slate-500">Opening Balance</p>
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <h4>46,256<i>t</i></h4>
+                    <span class="flex items-center text-xs font-medium text-success-500">
+                        <i class="h-3 w-3" stroke-width="3px" data-feather="arrow-up-right"></i> 1.2%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Conversation Rate  -->
+            <div class="card">
+              <div class="card-body flex items-center gap-4">
+                <div
+                        class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-info-500 bg-opacity-20 text-info-500">
+                  <i class="ti ti-message-2-cog text-3xl"></i>
+                </div>
+                <div class="flex flex-1 flex-col gap-1">
+                  <p class="text-sm tracking-wide text-slate-500">Expected Production</p>
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <h4>200,560<i>t</i></h4>
+                    <span class="flex items-center text-xs font-medium text-success-500">
+                        <i class="h-3 w-3" stroke-width="3px" data-feather="arrow-up-right"></i> 3.2%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Overview Section End -->
+           <section class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <!-- Top Customers  -->
+            <div class="card order-2 col-span-1 md:col-span-2 xl:order-1">
+              <div class="card-body flex h-full flex-col">
+                <!-- Header  -->
+                <div class="flex w-full justify-between">
+                  <h6>Raw Materials</h6>
+                  <div class="dropdown" data-placement="bottom-end">
+                    <div class="dropdown-toggle">
+                      <i class="ti ti-dots-vertical text-lg text-slate-500"></i>
+                    </div>
+                    <div class="dropdown-content w-[160px]">
+                      <ul class="dropdown-list">
+                        <li class="dropdown-list-item">
+                          <a href="javascript:void(0)" class="dropdown-link gap-2"> Actions </a>
+                        </li>
+                        <li class="dropdown-list-item">
+                          <a href="javascript:void(0)" class="dropdown-link"> Another Action </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-sm text-slate-400">Raw Materials inventories</p>
+                <div class="table-responsive">
+                  <table class="table min-w-[43rem]">
+                    <thead>
+                    <tr>
+                      <td>
+                        <p><strong>Inventory</strong></p>
+                      </td>
+                      <td>
+                        <p><strong>Opening Balance (T)</strong></p>
+                      </td>
+                      <td>
+                        <p><strong>Ave Daily Production (T)</strong></p>
+                      </td>
+                      <td>
+                        <p><strong>Days remaining</strong></p>
+                      </td>
+                      <td>
+                        <p><strong>Lead time (Days)</strong></p>
+                      </td>
+                      <td>
+                        <p><strong>Buffer (Days)</strong></p>
+                      </td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>
+                        <p>Mono-Ammonium Phosphate (MAP)</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>50,000</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>5,000</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>10</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>5</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>5</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Muriate of Potash (MOP)</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>45,000</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>5,000</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>9</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>5</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>4</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>Ammonium Nitrate</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>20,000</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>2,500</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>8</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>10</p>
+                      </td>
+                      <td>
+                        <p>&nbsp;</p>
+                        <p>-2</p>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+            <div class="card order-2 col-span-1 md:col-span-2 xl:order-1">
+              <div class="card-body flex h-full flex-col">
+                <!-- Header  -->
+                <div class="flex w-full justify-between">
+                  <h6>Finished goods</h6>
+                  <div class="dropdown" data-placement="bottom-end">
+                    <div class="dropdown-toggle">
+                      <i class="ti ti-dots-vertical text-lg text-slate-500"></i>
+                    </div>
+                    <div class="dropdown-content w-[160px]">
+                      <ul class="dropdown-list">
+                        <li class="dropdown-list-item">
+                          <a href="javascript:void(0)" class="dropdown-link gap-2"> Actions </a>
+                        </li>
+                        <li class="dropdown-list-item">
+                          <a href="javascript:void(0)" class="dropdown-link"> Another Action </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-sm text-slate-400">Finished goods inventories</p>
+                <div class="table-responsive">
+                  <table class="table">
+                    <tbody>
+                    <tr>
+                      <td>
+                        <p><strong>Product</strong></p>
+                      </td>
+                      <td>
+                        <p><strong>Opening Balance (T)</strong></p>
+                      </td>
+                      <td>
+                        <p><strong>Ave Daily Production (T)</strong></p>
+                      </td>
+                      <td>
+                        <p><strong>Target Daily Sales (T)</strong></p>
+                      </td>
+                      <td>
+                        <p><strong>Inventory Days</strong></p>
+                      </td>
+                      <td>
+                        <p><strong>Buffer (Days)</strong></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Compound D</p>
+                      </td>
+                      <td>
+                        <p>60,000</p>
+                      </td>
+                      <td>
+                        <p>15,000</p>
+                      </td>
+                      <td>
+                        <p>15,000</p>
+                      </td>
+                      <td>
+                        <p>4</p>
+                      </td>
+                      <td>
+                        <p>5</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Urea</p>
+                      </td>
+                      <td>
+                        <p>45,000</p>
+                      </td>
+                      <td>
+                        <p>5,000</p>
+                      </td>
+                      <td>
+                        <p>4,500</p>
+                      </td>
+                      <td>
+                        <p>10</p>
+                      </td>
+                      <td>
+                        <p>11</p>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <!-- Main Content Ends -->
+    </div>
+    <!-- Page Content Ends -->
+  </div>
+  <!-- Wrapper Ends -->
+
+</div>
+<script src="./js/app.js" type="module"></script>
+<script src="./js/custom/analytics.js" type="module"></script>
+</body>
+
+</html>

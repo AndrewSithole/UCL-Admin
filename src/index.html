@@ -40,11 +40,11 @@
       
          <div class="sidebar-logo-text">
            <h1 class="flex text-xl">
-             <span class="font-bold text-slate-800 dark:text-slate-200"> Admin </span>
-             <span class="font-semibold text-primary-500">Toolkit</span>
+             <span class="font-bold text-slate-800 dark:text-slate-200"> UCF </span>
+             <span class="font-semibold text-primary-500">Dashboards</span>
            </h1>
       
-           <p class="whitespace-nowrap text-xs text-slate-400">Simple &amp; Customizable</p>
+           <p class="whitespace-nowrap text-xs text-slate-400">Production monitoring</p>
          </div>
        </div>
      </a>
@@ -54,122 +54,22 @@
       <ul class="sidebar-content">
         <!-- Dashboard -->
         <li>
-          <a href="javascript:void(0);" class="sidebar-menu active">
+          <a href="/" class="sidebar-menu active">
             <span class="sidebar-menu-icon">
               <i data-feather="home"></i>
             </span>
             <span class="sidebar-menu-text">Dashboard</span>
-            <span class="sidebar-menu-arrow">
-              <i data-feather="chevron-right"></i>
-            </span>
-          </a>
-          <ul class="sidebar-submenu">
-            <li>
-              <a href="/" class="sidebar-submenu-item active">Analytics</a>
-            </li>
-            <li>
-              <a href="./ecommerce.html" class="sidebar-submenu-item">Ecommerce</a>
-            </li>
-          </ul>
-        </li>
-        
-        <!-- Email -->
-        <li>
-          <a href="./email.html" class="sidebar-menu">
-            <span class="sidebar-menu-icon">
-              <i data-feather="mail"></i>
-            </span>
-            <span class="sidebar-menu-text">Email</span>
           </a>
         </li>
-        <!-- Chat -->
-        <li>
-          <a href="./chat.html" class="sidebar-menu">
-            <span class="sidebar-menu-icon">
-              <i data-feather="message-square"></i>
-            </span>
-            <span class="sidebar-menu-text">Chat</span>
-          </a>
-        </li>
-        <!-- Calendar -->
-        <li>
-          <a href="./calendar.html" class="sidebar-menu">
-            <span class="sidebar-menu-icon">
-              <i data-feather="calendar"></i>
-            </span>
-            <span class="sidebar-menu-text">Calendar</span>
-          </a>
-        </li>
-        <!-- Invoice -->
-        <li>
-          <a href="javascript:void(0);" class="sidebar-menu">
-            <span class="sidebar-menu-icon">
-              <i data-feather="file-text"></i>
-            </span>
-            <span class="sidebar-menu-text">Invoice</span>
-            <span class="sidebar-menu-arrow">
-              <i data-feather="chevron-right"></i>
-            </span>
-          </a>
-          <ul class="sidebar-submenu">
-            <li>
-              <a href="./invoice-create.html" class="sidebar-submenu-item"> Create </a>
-            </li>
 
-            <li>
-              <a href="./invoice-details.html" class="sidebar-submenu-item"> Details </a>
-            </li>
-          </ul>
-        </li>
-        <!-- ecommnerce -->
+        <!-- Production -->
         <li>
-          <a href="javascript:void(0);" class="sidebar-menu">
+          <a href="./production.html" class="sidebar-menu">
             <span class="sidebar-menu-icon">
-              <i data-feather="shopping-bag"></i>
+              <i data-feather="box"></i>
             </span>
-            <span class="sidebar-menu-text">Ecommerce</span>
-            <span class="sidebar-menu-arrow">
-              <i data-feather="chevron-right"></i>
-            </span>
+            <span class="sidebar-menu-text">Inventory</span>
           </a>
-          <ul class="sidebar-submenu">
-            <li>
-              <a href="./product-list.html" class="sidebar-submenu-item"> Product List </a>
-            </li>
-
-            <li>
-              <a href="./product-edit.html" class="sidebar-submenu-item"> Product Edit </a>
-            </li>
-            <li>
-              <a href="./order-list.html" class="sidebar-submenu-item"> Order List </a>
-            </li>
-            <li>
-              <a href="./order-details.html" class="sidebar-submenu-item"> Order Details </a>
-            </li>
-            <li>
-              <a href="./customer-list.html" class="sidebar-submenu-item"> Customer List </a>
-            </li>
-          </ul>
-        </li>
-        <!-- Users -->
-        <li>
-          <a href="javascript:void(0);" class="sidebar-menu">
-            <span class="sidebar-menu-icon">
-              <i data-feather="users"></i>
-            </span>
-            <span class="sidebar-menu-text">Users</span>
-            <span class="sidebar-menu-arrow">
-              <i data-feather="chevron-right"></i>
-            </span>
-          </a>
-          <ul class="sidebar-submenu">
-            <li>
-              <a href="./user-list.html" class="sidebar-submenu-item">List</a>
-            </li>
-            <li>
-              <a href="./profile.html" class="sidebar-submenu-item"> Profile </a>
-            </li>
-          </ul>
         </li>
       </ul>
       <!-- Sidebar Menu Ends -->
@@ -198,139 +98,14 @@
               </button>
               <h5>UCF Financial dashboards</h5>
             </div>
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="/">Home</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="#">Analytics</a>
-              </li>
-            </ol>
+            <select class="select select-sm w-full md:w-32">
+              <option value="1">Volume</option>
+              <option value="2">Monetary</option>
+            </select>
           </div>
           <!-- Page Title Ends -->
 
           <div class="space-y-6">
-            <!-- Overview Section Start -->
-            <section class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-              <!-- Product Views  -->
-              <div class="card">
-                <div class="card-body flex items-center gap-4">
-                  <div
-                    class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary-500 bg-opacity-20 text-primary-500">
-                    <i data-feather="box" class="text-3xl"></i>
-                  </div>
-                  <div class="flex flex-1 flex-row justify-between gap-1">
-                    <div class="flex flex-1 flex-col gap-1">
-                      <div class="flex flex-1 flex-row gap-1 justify-start">
-                        <p class="text-sm tracking-wide text-slate-500">Production</p>
-                        <span class="flex items-center text-xs font-medium text-success-500">
-                          <i class="h-3 w-3" stroke-width="3px" data-feather="arrow-up-right"></i>2.2%
-                        </span>
-                      </div>
-                      <div class="flex flex-wrap items-baseline justify-between gap-2">
-                        <h4>24,92</h4>
-                      </div>
-                    </div>
-                    <div class="flex flex-col justify-center">
-                        <span class="flex items-center text-xs font-medium text-slate-500">
-                          YTD <span class="text-info-500"> &nbsp;4600K</span>
-                        </span>
-                      <span class="flex items-center text-xs font-medium text-slate-500">
-                          MTD <span class="text-info-500"> &nbsp;20K</span>
-                        </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Product Sold  -->
-              <div class="card">
-                <div class="card-body flex items-center gap-4">
-                  <div
-                    class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-success-500 bg-opacity-20 text-success-500">
-                    <i class="bx bx-dollar-circle text-3xl"></i>
-                  </div>
-                  <div class="flex flex-1 flex-row justify-between gap-1">
-                    <div class="flex flex-1 flex-col gap-1">
-                    <div class="flex flex-1 flex-row gap-1 justify-start">
-                      <p class="text-sm tracking-wide text-slate-500">Sales</p>
-                      <span class="flex items-center text-xs font-medium text-danger-500">
-                        <i class="h-3 w-3" stroke-width="3px" data-feather="arrow-down-left"></i> 0.5%</span>
-                    </div>
-                    <div class="flex flex-wrap items-baseline justify-between gap-2">
-                      <h4>8,430</h4>
-                    </div>
-                  </div>
-                    <div class="flex flex-col justify-center">
-                        <span class="flex items-center text-xs font-medium text-slate-500">
-                          YTD <span class="text-success-500"> &nbsp;4600K</span>
-                        </span>
-                      <span class="flex items-center text-xs font-medium text-slate-500">
-                          MTD <span class="text-success-500"> &nbsp;20K</span>
-                        </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Likes  -->
-              <div class="card">
-                <div class="card-body flex items-center gap-4">
-                  <div
-                    class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-warning-500 bg-opacity-20 text-warning-500">
-                    <i class="ti ti-thumb-up text-3xl"></i>
-                  </div>
-                  <div class="flex flex-1 flex-row justify-between gap-1">
-                    <div class="flex flex-1 flex-col gap-1">
-                      <div class="flex flex-1 flex-row gap-1 justify-start">
-                        <p class="text-sm tracking-wide text-slate-500">Efficiency</p>
-                      <span class="flex items-center text-xs font-medium text-success-500">
-                        <i class="h-3 w-3" stroke-width="3px" data-feather="arrow-up-right"></i> 1.2%</span>
-                      </div>
-                    <div class="flex flex-wrap items-baseline justify-between gap-2">
-                      <h4>46,256</h4>
-                    </div>
-                  </div>
-                    <div class="flex flex-col justify-center">
-                        <span class="flex items-center text-xs font-medium text-slate-500">
-                          YTD <span class="text-warning-500"> &nbsp;4600K</span>
-                        </span>
-                    <span class="flex items-center text-xs font-medium text-slate-500">
-                          MTD <span class="text-warning-500"> &nbsp;20K</span>
-                        </span>
-                  </div>
-                </div>
-                </div>
-              </div>
-              <!-- Conversation Rate  -->
-              <div class="card">
-                <div class="card-body flex items-center gap-4">
-                  <div
-                    class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-lime-500 bg-opacity-20 text-lime-500">
-                    <i class="ti ti-message-2-cog text-3xl"></i>
-                  </div>
-                  <div class="flex flex-1 flex-row justify-between gap-1">
-                    <div class="flex flex-1 flex-col gap-1">
-                      <div class="flex flex-1 flex-row gap-1 justify-start">
-                        <p class="text-sm tracking-wide text-slate-500">Inventory</p>
-                        <span class="flex items-center text-xs font-medium text-success-500">
-                          <i class="h-3 w-3" stroke-width="3px" data-feather="arrow-up-right"></i> 3.2%</span>
-                    </div>
-                    <div class="flex flex-wrap items-baseline justify-between gap-2">
-                      <h4>200,56</h4>
-                    </div>
-                  </div>
-                    <div class="flex flex-col justify-center">
-                        <span class="flex items-center text-xs font-medium text-slate-500">
-                          YTD <span class="text-lime-500"> &nbsp;4600K</span>
-                        </span>
-                    <span class="flex items-center text-xs font-medium text-slate-500">
-                          MTD <span class="text-lime-500"> &nbsp;20K</span>
-                        </span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <!-- Overview Section End -->
             <section class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
               <!-- Product Views  -->
               <div class="card">
@@ -340,9 +115,9 @@
                     <i data-feather="box" class="text-3xl"></i>
                   </div>
                   <div class="flex flex-1 flex-col gap-1">
-                    <p class="text-sm tracking-wide text-slate-500">Product Views</p>
+                    <p class="text-sm tracking-wide text-slate-500">Production</p>
                     <div class="flex flex-wrap items-baseline justify-between gap-2">
-                      <h4>$24,92</h4>
+                      <h4>9,200<i class="font-normal">t</i></h4>
                       <span class="flex items-center text-xs font-medium text-success-500"><i class="h-3 w-3"
                                                                                               stroke-width="3px" data-feather="arrow-up-right"></i>2.2%</span>
                     </div>
@@ -350,10 +125,10 @@
                 </div>
                 <div class="flex flex-row justify-between px-7 pb-4 -mt-2">
                         <span class="flex items-center text-xs font-medium text-slate-500">
-                          <i class="h-3 w-3 text-primary-500" stroke-width="3px" data-feather="clock"></i> &nbsp;YTD 4600K
+                          <i class="h-3 w-3 text-primary-500" stroke-width="3px" data-feather="clock"></i> &nbsp;YTD 4600 <i>t</i>
                         </span>
                   <span class="flex items-center text-xs font-medium text-slate-500">
-                          <i class="h-3 w-3 text-primary-500" stroke-width="3px" data-feather="clock"></i> &nbsp;MTD 20K
+                          <i class="h-3 w-3 text-primary-500" stroke-width="3px" data-feather="clock"></i> &nbsp;MTD 20  <i>t</i>
                         </span>
                 </div>
               </div>
@@ -365,9 +140,9 @@
                     <i class="bx bx-dollar-circle text-3xl"></i>
                   </div>
                   <div class="flex flex-1 flex-col gap-1">
-                    <p class="text-sm tracking-wide text-slate-500">Product Sold</p>
+                    <p class="text-sm tracking-wide text-slate-500">Sales</p>
                     <div class="flex flex-wrap items-baseline justify-between gap-2">
-                      <h4>8,430</h4>
+                      <h4>8,430<i class="font-normal">t</i></h4>
                       <span class="flex items-center text-xs font-medium text-danger-500">
                         <i class="h-3 w-3" stroke-width="3px" data-feather="arrow-down-left"></i> 0.5%</span>
                     </div>
@@ -375,10 +150,10 @@
                 </div>
                 <div class="flex flex-row justify-between px-7 pb-4 -mt-2">
                         <span class="flex items-center text-xs font-medium text-slate-500">
-                          <i class="h-3 w-3 text-success-500" stroke-width="3px" data-feather="clock"></i> &nbsp;YTD 4600K
+                          <i class="h-3 w-3 text-success-500" stroke-width="3px" data-feather="clock"></i> &nbsp;YTD 4600 <i>t</i>
                         </span>
                   <span class="flex items-center text-xs font-medium text-slate-500">
-                          <i class="h-3 w-3 text-success-500" stroke-width="3px" data-feather="clock"></i> &nbsp;MTD 20K
+                          <i class="h-3 w-3 text-success-500" stroke-width="3px" data-feather="clock"></i> &nbsp;MTD 20 <i>t</i>
                         </span>
                 </div>
               </div>
@@ -390,9 +165,9 @@
                     <i class="ti ti-thumb-up text-3xl"></i>
                   </div>
                   <div class="flex flex-1 flex-col gap-1">
-                    <p class="text-sm tracking-wide text-slate-500">Total Likes</p>
+                    <p class="text-sm tracking-wide text-slate-500">Production Efficiency</p>
                     <div class="flex flex-wrap items-baseline justify-between gap-2">
-                      <h4>46,256</h4>
+                      <h4>4,656<i class="font-normal">t</i></h4>
                       <span class="flex items-center text-xs font-medium text-success-500">
                         <i class="h-3 w-3" stroke-width="3px" data-feather="arrow-up-right"></i> 1.2%</span>
                     </div>
@@ -400,10 +175,10 @@
                 </div>
                 <div class="flex flex-row justify-between px-7 pb-4 -mt-2">
                         <span class="flex items-center text-xs font-medium text-slate-500">
-                          <i class="h-3 w-3 text-warning-500" stroke-width="3px" data-feather="clock"></i> &nbsp;YTD 4600K
+                          <i class="h-3 w-3 text-warning-500" stroke-width="3px" data-feather="clock"></i> &nbsp;YTD 4600<i>t</i>
                         </span>
                   <span class="flex items-center text-xs font-medium text-slate-500">
-                          <i class="h-3 w-3 text-warning-500" stroke-width="3px" data-feather="clock"></i> &nbsp;MTD 20K
+                          <i class="h-3 w-3 text-warning-500" stroke-width="3px" data-feather="clock"></i> &nbsp;MTD 60<i>t</i>
                         </span>
                 </div>
               </div>
@@ -415,9 +190,9 @@
                     <i class="ti ti-message-2-cog text-3xl"></i>
                   </div>
                   <div class="flex flex-1 flex-col gap-1">
-                    <p class="text-sm tracking-wide text-slate-500">Conversation</p>
+                    <p class="text-sm tracking-wide text-slate-500">Inventory</p>
                     <div class="flex flex-wrap items-baseline justify-between gap-2">
-                      <h4>$200,56</h4>
+                      <h4>200,560<i class="font-normal">t</i></h4>
                       <span class="flex items-center text-xs font-medium text-success-500">
                         <i class="h-3 w-3" stroke-width="3px" data-feather="arrow-up-right"></i> 3.2%</span>
                     </div>
@@ -425,10 +200,10 @@
                 </div>
                 <div class="flex flex-row justify-between px-7 pb-4 -mt-2">
                         <span class="flex items-center text-xs font-medium text-slate-500">
-                          <i class="h-3 w-3 text-info-500" stroke-width="3px" data-feather="clock"></i> &nbsp;YTD 4600K
+                          <i class="h-3 w-3 text-info-500" stroke-width="3px" data-feather="clock"></i> &nbsp;YTD 4600<i>t</i>
                         </span>
                   <span class="flex items-center text-xs font-medium text-slate-500">
-                          <i class="h-3 w-3 text-info-500" stroke-width="3px" data-feather="clock"></i> &nbsp;MTD 20K
+                          <i class="h-3 w-3 text-info-500" stroke-width="3px" data-feather="clock"></i> &nbsp;MTD 60<i>t</i>
                         </span>
                 </div>
               </div>
@@ -541,6 +316,7 @@
                               </div>
                             </div>
                           </div>
+                          <p class="text-xs text-slate-500">Target: 60,000<i>t</i></p>
                         </div>
                       </div>
                       <!-- Australia  -->
@@ -559,6 +335,7 @@
                               </div>
                             </div>
                           </div>
+                          <p class="text-xs text-slate-500">Target: 15,000<i>t</i></p>
                         </div>
                       </div>
                       <!-- Brazil  -->
@@ -577,6 +354,7 @@
                               </div>
                             </div>
                           </div>
+                          <p class="text-xs text-slate-500">Target: 10,000<i>t</i></p>
                         </div>
                       </div>
                       <!-- Germany  -->
@@ -595,6 +373,7 @@
                               </div>
                             </div>
                           </div>
+                          <p class="text-xs text-slate-500">Target: 20,000<i>t</i></p>
                         </div>
                       </div>
                     </div>
